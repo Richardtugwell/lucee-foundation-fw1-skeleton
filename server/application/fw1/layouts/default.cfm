@@ -1,0 +1,14 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="theApp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Lucee / FW1 / Foundation for Apps</title>
+	<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<cfoutput>#body#</cfoutput>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/templates.js"></script>
+</body>
+</html>
