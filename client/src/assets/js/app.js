@@ -17,9 +17,6 @@
         .state('home', {
             url:'/',
             views: {
-                'header': {
-                    templateUrl: 'components/header.html'
-                },
                 'content': {
                     templateUrl: 'components/content.html'
                 }

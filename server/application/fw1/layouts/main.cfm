@@ -9,9 +9,10 @@
 		</span>
 	</div>
 	<div class="grid-block">
-		<div zf-panel position="left" id="sub-nav" class="medium-2 medium-grid-block vertical">
+		<div zf-panel position="left" id="sub-nav" class="medium-grid-block medium-2 vertical">
 			<cfoutput>#view("main/sidebar")#</cfoutput>
 		</div>
-			<div ui-view="content" class="small-12 medium-10" />
-	</div>
+		<div class="grid-block small-12 medium-10">
+			<cfoutput>#body#</cfoutput>
+		</div>
 </div>

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body>
-<cfoutput>#body#</cfoutput>
+	<cfoutput>#body#</cfoutput>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/templates.js"></script>
 </body>
