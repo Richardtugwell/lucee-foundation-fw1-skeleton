@@ -105,9 +105,9 @@
 // $success-color: #43AC6A;
 // $warning-color: #F08A24;
 // $dark-color: #232323;
-// $gray: #dfdfdf;
-// $gray-dark: darken($gray, 8);
-// $gray-light: lighten($gray, 8);
+ $gray: #dfdfdf;
+ $gray-dark: darken($gray, 8);
+ $gray-light: lighten($gray, 8);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 4px;
@@ -426,7 +426,7 @@
 // - - - - - - - - - - - - - - -
 
 // $menubar-fontsize: 1rem;
-// $menubar-background: #fff;
+ $menubar-background: $gray-light;
 // $menubar-background-hover: smartscale($menubar-background, 7%);
 // $menubar-background-active: $menubar-background-hover;
 // $menubar-color: isitlight($menubar-background);
@@ -542,11 +542,11 @@
 // 21. Panel
 // - - - - - - - - - - - - - - -
 
-// $panel-size-horizontal: 300px;
-// $panel-size-vertical: 300px;
+ $panel-size-horizontal: 100%;
+ $panel-size-vertical: 100%;
 // $panel-padding: 0;
 
-// $panel-background: #fff;
+ $panel-background: $gray-light;
 // $panel-shadow: 3px 0 10px rgba(black, 0.25);
 // $panel-animation-speed: 0.25s;
 
