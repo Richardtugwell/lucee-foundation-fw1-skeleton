@@ -24,7 +24,7 @@ module.exports = function(config) {
             .pipe($.autoprefixer({
                 browsers: config.COMPATIBILITY
             }))
-            .pipe(uncss)
+         //   .pipe(uncss)
             .pipe(minifycss)
             .pipe($.if(!config.isProduction, $.sourcemaps.write()))
             .pipe(gulp.dest(config.TARGET.assets + '/css'))
