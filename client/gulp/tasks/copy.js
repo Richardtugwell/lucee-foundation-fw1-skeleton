@@ -5,7 +5,7 @@ var $       = require('gulp-load-plugins')();
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 module.exports = function(config) {
 
-    gulp.task('copy', ['copy:foundation', 'copy:assets'] );
+    gulp.task('copy', ['copy:foundation'] );
 
     gulp.task('copy:assets', function () {
         return gulp.src(config.SOURCE.assets)
