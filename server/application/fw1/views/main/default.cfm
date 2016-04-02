@@ -13,6 +13,8 @@
 			<cfoutput>#view("main/sidebar")#</cfoutput>
 		</div>
 		<div class="grid-block small-12 medium-10">
-            <div ui-view="content"></div>
+			<div class="grid-content">
+	            <div ui-view="content"></div>
+			</div>
 		</div>
 </div>
