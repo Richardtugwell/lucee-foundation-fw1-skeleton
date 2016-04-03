@@ -7,15 +7,11 @@ component extends="framework.one" {
 		unhandledPaths : '/angular',
 		reloadApplicationOnEveryRequest : true,
         generateSES : true,
+        defaultItem : 'app',
         SESOmitIndex : true,
 		routes = [
-		  { "$GET/todo/:id" = "/main/get/id/:id" },
-		  { "$GET/todo/" = "/main/list" },
-		  { "$DELETE/todo/:id" = "/main/delete/id/:id" },
-		  { "$POST/todo/" = "/main/save" },
-		  { "$GET/testbox/" = "/testbox/" },
-		  { "$GET/*" = "/main/default/" },
-		  { "*" = "/main/default/" }
+		  { "$GET/:section" = "/:section/app/" },
+		  { "*" = "/main/app/" }
 		]
 	}
 

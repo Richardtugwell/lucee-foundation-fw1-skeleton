@@ -30,7 +30,7 @@ module.exports = function(config) {
             }));
         return gulp.src(path.join(pathToFolder, folder, '**/*.js'))
             .pipe($.sourcemaps.init())
-            .pipe($.concat(folder + '.module.js'))
+            .pipe($.concat(folder + '.app.js'))
             .pipe(uglify)
             .pipe($.if(!config.isProduction, $.sourcemaps.write()))
             .pipe(gulp.dest(config.TARGET.assets + '/apps/js'))

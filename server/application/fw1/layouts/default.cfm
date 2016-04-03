@@ -1,6 +1,5 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html ng-app="theApp" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="<cfoutput>#getSection()#</cfoutput>" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Lucee / FW1 / Foundation for Apps</title>
@@ -10,6 +9,6 @@
 	<cfoutput>#body#</cfoutput>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/templates.js"></script>
-    <script src="/assets/apps/js/<cfoutput>#getSection()#</cfoutput>.module.js"></script>
+    <script src="/assets/apps/js/<cfoutput>#getSection()#</cfoutput>.app.js"></script>
 </body>
 </html>
