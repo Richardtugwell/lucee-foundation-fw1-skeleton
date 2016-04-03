@@ -10,5 +10,6 @@
 	<cfoutput>#body#</cfoutput>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/templates.js"></script>
+    <script src="/assets/apps/js/<cfoutput>#getSection()#</cfoutput>.module.js"></script>
 </body>
 </html>
