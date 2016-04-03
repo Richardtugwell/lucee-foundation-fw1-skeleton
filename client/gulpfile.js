@@ -1,9 +1,18 @@
 var gulp        = require('gulp');
 var sequence    = require('run-sequence');
-var utils = require('./gulp/utils');
-
+var utils       = require('./gulp/utils');
+var fs          = require('fs-extra')
 //config contains all constants and variables - passed to all tasks. Also parses command parms
 var config = require('./gulp/config');
+
+var items = {} // files, directories, symlinks, etc
+fs.walk("src")
+  .on('data', function (item) {
+    items[item.path] = item.stats.isFile()
+  })
+  .on('end', function () {
+    console.dir(items) // => [ ... array of files]
+  })
 
 //recursively imports all task modules
 utils.readDir(config.TASKDIR)
