@@ -8,10 +8,11 @@ component extends="framework.one" {
 		reloadApplicationOnEveryRequest : true,
         generateSES : true,
         defaultItem : 'app',
+        defaultSection : 'public',
         SESOmitIndex : true,
 		routes = [
 		  { "$GET/:section" = "/:section/app/" },
-		  { "*" = "/main/app/" }
+		  { "*" = "/public/app/" }
 		]
 	}
 
@@ -26,7 +27,7 @@ component extends="framework.one" {
 
 	function onMissingView() {
 
-		return view("main/404");
+		return view("public/404");
 
     }
 

@@ -1,16 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('main', [
-    'ui.router',
-    'ngAnimate',
-
-    //foundation
-    'foundation',
-    //app modules
-    'mainModule'
-    ])
+  angular.module('public')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
