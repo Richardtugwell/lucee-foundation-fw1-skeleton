@@ -2,7 +2,7 @@
 	<div class="dark title-bar">
 		<div class="center title"><a ui-sref="home">Lucee / FW1 / Foundation</a></div>
 		<span class="left hide-for-medium">
-			<a zf-toggle="sub-nav" ng-bind="sidebarClosed ? 'Menu' : 'Close'"></a>
+			<a zf-toggle="sub-nav">Menu</a>
 		</span>
 		<span class="right">
 			<a ui-sref="home.login">Login</a>

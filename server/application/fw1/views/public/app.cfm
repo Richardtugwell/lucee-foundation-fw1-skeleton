@@ -1,13 +1,13 @@
 <div class="grid-frame vertical">
 	<div class="menu-group dark">
-		<div class="menu-group-left">
+		<div class="menu-group-left condense">
 			<ul class="menu-bar">
 				<li>
 					<a ui-sref="home">Lucee / FW1 / Foundation</a>
 				</li>
 			</ul>
 		</div>
-		<div class="menu-group-right">
+		<div class="menu-group-right condense">
 			<ul class="menu-bar">
 				<li>
 					<a ui-sref="home.login">Login</a>
