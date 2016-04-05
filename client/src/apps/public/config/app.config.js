@@ -4,11 +4,16 @@
   angular.module('public')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
+        .state('root', {
+            abstract: true,
+            templateUrl: 'components/root.html'
+        })
         .state('home', {
             url:'/',
+            parent: 'root',
             views: {
                 'header': {
                     templateUrl: 'components/header.html'
@@ -21,7 +26,7 @@
         .state('home.login', {
             url:'login',
             views: {
-                'content@': {
+                'content@root': {
                     templateUrl: 'components/login.html'
                 }
             }
@@ -29,7 +34,7 @@
         .state('home.register', {
             url:'register',
             views: {
-                'content@': {
+                'content@root': {
                     templateUrl: 'components/register.html'
                 }
             }
