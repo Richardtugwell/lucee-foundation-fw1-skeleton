@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('public')
+  angular.module('dashboard')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -15,22 +15,6 @@
                 },
                 'content': {
                     templateUrl: 'components/content.html'
-                }
-            }
-        })
-        .state('home.login', {
-            url:'login',
-            views: {
-                'content@': {
-                    templateUrl: 'components/login.html'
-                }
-            }
-        })
-        .state('home.register', {
-            url:'register',
-            views: {
-                'content@': {
-                    templateUrl: 'components/register.html'
                 }
             }
         })
