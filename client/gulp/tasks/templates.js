@@ -25,6 +25,7 @@ module.exports = function(config) {
         return gulp.src(path.join(pathToFolder, folder, '**/*.html'))
 
         .pipe($.ngHtml2js({
+          prefix: folder + '/',
           moduleName: 'foundation',
           declareModule: false
         }))

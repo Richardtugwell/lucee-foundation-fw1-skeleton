@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('public')
+  angular.module('dashboard')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -9,7 +9,7 @@
     $stateProvider
         .state('root', {
             abstract: true,
-            templateUrl: 'components/root.html'
+            templateUrl: 'dashboard/root.html'
         })
         .state('home', {
             url:'/',
@@ -18,8 +18,11 @@
                 'header': {
                     templateUrl: 'components/header.html'
                 },
+                'topmenu': {
+                    templateUrl: 'public/topmenu.html'
+                },
                 'content': {
-                    templateUrl: 'components/content.html'
+                    templateUrl: 'public/modules/home/content.html'
                 }
             }
         })
@@ -27,7 +30,7 @@
             url:'login',
             views: {
                 'content@root': {
-                    templateUrl: 'modules/login/login.html'
+                    templateUrl: 'public/modules/login/login.html'
                 }
             }
         })
@@ -35,17 +38,11 @@
             url:'register',
             views: {
                 'content@root': {
-                    templateUrl: 'components/register.html'
+                    templateUrl: 'public/modules/register/register.html'
                 }
             }
         })
 
     }])
-    .run(run)
-  ;
-
-  function run() {
-    FastClick.attach(document.body);
-  }
 
 })();
