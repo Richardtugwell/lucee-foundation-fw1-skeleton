@@ -13,18 +13,7 @@ module.exports = function(config) {
     });
 
     // Compiles the Foundation for Apps directive partials into a single JavaScript file
-    // Also compiles custom partials from partials directory
     gulp.task('copy:foundation', function(cb) {
-      gulp.src(config.SOURCE.ngtemplates)
-        .pipe($.ngHtml2js({
-          prefix: 'components/',
-          moduleName: 'foundation',
-          declareModule: false
-        }))
-        .pipe($.uglify())
-        .pipe($.concat('templates.js'))
-        .pipe(gulp.dest(config.TARGET.assets + '/js'))
-      ;
 
       // Iconic SVG icons
       gulp.src(config.SOURCE.iconic)

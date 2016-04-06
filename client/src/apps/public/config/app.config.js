@@ -27,7 +27,7 @@
             url:'login',
             views: {
                 'content@root': {
-                    templateUrl: 'components/login.html'
+                    templateUrl: 'modules/login/login.html'
                 }
             }
         })
