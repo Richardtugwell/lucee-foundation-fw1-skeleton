@@ -25,6 +25,9 @@ var SOURCE = {
         'bower_components/foundation-apps/js/angular/components/**/*.html',
         'src/partials/**/*.html'
     ],
+    apptemplates: [
+        'src/apps/**/*.html'
+    ],
     javascript: [
         'bower_components/fastclick/lib/fastclick.js',
         'bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js',
