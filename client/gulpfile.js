@@ -11,7 +11,7 @@ utils.readDir(config.TASKDIR)
     });
 
 // (re)Build the target folder by running the defined tasks
-gulp.task('build', ['sass', 'javascript', 'images', 'copy'] );
+gulp.task('build', ['sass', 'javascript', 'templates', 'images', 'copy'] );
 
 // default task cleans target drectory, builds source, starts server and watches source for changes
 gulp.task('default',  function () {
