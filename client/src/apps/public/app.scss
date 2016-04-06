@@ -1,4 +1,9 @@
-.centered {
-    margin-left: auto;
-    margin-right: auto;
+.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-common {
+    border:1px solid silver;
+	margin-bottom:100px;
 }
