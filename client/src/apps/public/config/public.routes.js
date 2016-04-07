@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('dashboard')
+  angular.module('public')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -9,7 +9,7 @@
     $stateProvider
         .state('root', {
             abstract: true,
-            templateUrl: 'dashboard/root.html'
+            templateUrl: 'public/public.html'
         })
         .state('home', {
             url:'/',
@@ -22,7 +22,7 @@
                     templateUrl: 'public/topmenu.html'
                 },
                 'content': {
-                    templateUrl: 'public/modules/home/content.html'
+                    templateUrl: 'public/modules/home/public.home.html'
                 }
             }
         })
@@ -30,7 +30,7 @@
             url:'login',
             views: {
                 'content@root': {
-                    templateUrl: 'public/modules/login/login.html'
+                    templateUrl: 'public/modules/login/public.login.html'
                 }
             }
         })
@@ -38,7 +38,7 @@
             url:'register',
             views: {
                 'content@root': {
-                    templateUrl: 'public/modules/register/register.html'
+                    templateUrl: 'public/modules/register/public.register.html'
                 }
             }
         })
