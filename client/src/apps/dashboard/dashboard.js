@@ -8,6 +8,9 @@
     //foundation
     'foundation',
 
+    //common
+    'common',
+
     //app modules
     'dashboard.todos',
     'dashboard.profile'

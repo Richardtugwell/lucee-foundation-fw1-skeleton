@@ -16,7 +16,7 @@
             parent: 'root',
             views: {
                 'header': {
-                    templateUrl: 'common/modules/header/common.header.html'
+                    template: '<div common-header></div'
                 },
                 'topmenu': {
                     templateUrl: 'public/topmenu.html'

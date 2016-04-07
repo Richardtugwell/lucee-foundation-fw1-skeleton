@@ -4,7 +4,7 @@ component extends="framework.one" {
 	variables.framework = {
 		base : "/application/fw1/" ,
 		dilocations : '/application/services',
-		unhandledPaths : '/angular',
+		unhandledExtensions : 'svg',
 		reloadApplicationOnEveryRequest : true,
         generateSES : true,
         defaultItem : 'app',

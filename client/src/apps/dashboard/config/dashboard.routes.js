@@ -16,13 +16,13 @@
             parent: 'root',
             views: {
                 'header': {
-                    templateUrl: 'components/header.html'
+                    template: '<div common-header></div>'
                 },
                 'topmenu': {
-                    templateUrl: 'public/topmenu.html'
+                    template: '<p>Add top menu if required</p>'
                 },
                 'content': {
-                    templateUrl: 'public/modules/home/dashboard.html'
+                    template: '<p>Add content</p>'
                 }
             }
         })
