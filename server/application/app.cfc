@@ -5,11 +5,11 @@ component extends="framework.one" {
 		base : "/application/fw1/" ,
 		dilocations : '/application/services',
 		unhandledExtensions : 'svg',
+		unhandledPaths : 'assets',
 		reloadApplicationOnEveryRequest : true,
         generateSES : true,
         defaultItem : 'app',
         defaultSection : 'public',
-        SESOmitIndex : true,
 		routes = [
 		  { "$GET/:section" = "/:section/app/" },
 		  { "*" = "/public/app/" }
