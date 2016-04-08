@@ -5,11 +5,11 @@
 		.module('common.header')
 		.controller('CommonHeader' , commonHeaderController);
 
-	  function commonHeaderController() {
-	  	var vm = this;
-	  	vm.menu = ['dashboard', 'public'];
+		commonHeaderController.$inject = ['common.authService']
 
-
-	  }
+		function commonHeaderController(authService) {
+			var vm = this;
+			vm.menu = authService.getAuthMenuItems();
+		}
 
 })();
