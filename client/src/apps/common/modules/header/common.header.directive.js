@@ -8,7 +8,7 @@
 	  function commonHeaderDirective() {
 	    var directive = {
 	    	scope: {
-	    		menu: '@'
+	    		userMenuItems: '@'
 	    	},
 	      restrict: 'AE',
 	      templateUrl: 'common/modules/header/common.header.html',

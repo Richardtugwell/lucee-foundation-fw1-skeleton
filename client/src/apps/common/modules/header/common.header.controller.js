@@ -9,7 +9,7 @@
 
 		function commonHeaderController(authService) {
 			var vm = this;
-			vm.menu = authService.getAuthMenuItems();
+			vm.userMenuItems = authService.getUserMenuItems();
 		}
 
 })();

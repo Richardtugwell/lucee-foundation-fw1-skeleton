@@ -9,11 +9,11 @@
 
 	    var service    = {};
 
-	    service.getAuthMenuItems = getAuthMenuItems;
+	    service.getUserMenuItems = getUserMenuItems;
 
 	    return service;
 
-	    function getAuthMenuItems() {
+	    function getUserMenuItems() {
 
 			return ['Dashboard', 'Public'];
 	    }

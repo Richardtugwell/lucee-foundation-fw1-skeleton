@@ -8,8 +8,8 @@
 	</div>
 	<div class="menu-group-right condense">
 		<ul class="menu-bar">
-			<li ng-repeat="link in vm.menu">
-				<a href="/index.cfm/{{link}}">{{link}}</a>
+			<li ng-repeat="item in vm.userMenuItems">
+				<a href="/index.cfm/{{item}}">{{item}}</a>
 			</li>
 		</ul>
 	</div>
