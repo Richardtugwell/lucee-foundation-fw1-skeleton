@@ -12,6 +12,13 @@ component accessors = true {
 
 	}
 
+	public void function getMenu() {
+
+		var menu = ['Public', 'Dashboard', 'Admin'];
+
+		framework.renderdata("JSON" , menu);
+
+	}
 	public void function delete( struct rc ) {
 
 		var ret = todoservice.delete(arguments.rc.id);

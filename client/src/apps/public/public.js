@@ -2,11 +2,6 @@
   'use strict';
 
   angular.module('public', [
-    'ui.router',
-    'ngAnimate',
-
-    //foundation
-    'foundation',
     
     //common
     'common',

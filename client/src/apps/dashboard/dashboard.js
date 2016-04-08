@@ -2,11 +2,6 @@
   'use strict';
 
   angular.module('dashboard', [
-    'ui.router',
-    'ngAnimate',
-
-    //foundation
-    'foundation',
 
     //common
     'common',

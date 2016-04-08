@@ -5,9 +5,12 @@
 		.module('common')
 		.factory('common.authService' , authService)
 
-	  function authService() {
+		authService.inject = ['$resource'];
+
+	  function authService($resource) {
 
 	    var service    = {};
+		var menu = $resource('/index.cfm/public/getMenu');
 
 	    service.getUserMenuItems = getUserMenuItems;
 
@@ -15,7 +18,7 @@
 
 	    function getUserMenuItems() {
 
-			return ['Dashboard', 'Public'];
+			return menu.query();
 	    }
 
 	  }

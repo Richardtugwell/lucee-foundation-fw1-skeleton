@@ -11,6 +11,7 @@ component extends="framework.one" {
         defaultItem : 'app',
         defaultSection : 'public',
 		routes = [
+		  { "$GET/public/getMenu" = "/public/getMenu/" },
 		  { "$GET/:section" = "/:section/app/" },
 		  { "*" = "/public/app/" }
 		]
