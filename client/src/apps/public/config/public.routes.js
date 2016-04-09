@@ -16,10 +16,10 @@
             parent: 'root',
             views: {
                 'header': {
-                    template: '<div common-header></div'
+                    template: '<fm-common-header />'
                 },
                 'topmenu': {
-                    templateUrl: 'public/topmenu.html'
+                    template: '<fm-topmenu />'
                 },
                 'content': {
                     templateUrl: 'public/modules/home/public.home.html'

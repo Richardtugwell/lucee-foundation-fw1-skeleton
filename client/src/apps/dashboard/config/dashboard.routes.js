@@ -16,10 +16,10 @@
             parent: 'root',
             views: {
                 'header': {
-                    template: '<div common-header></div>'
+                    template: '<fm-common-header />'
                 },
                 'topmenu': {
-                    template: '<p>Add top menu if required</p>'
+                    template: '<p>Add a top menu if required</p>'
                 },
                 'content': {
                     template: '<p>Add content</p>'
