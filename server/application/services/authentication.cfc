@@ -20,9 +20,9 @@ component accessors="true"   {
         res['authorised'] = false;
         res['iduser'] = 0;
 
-		var user = users[ arguments.user ];
+		if ( structKeyExists(users , arguments.user) AND user.password eq arguments.password ) {
 
-		if ( !isNull(user) AND user.password eq arguments.password ) {
+			var user = users[ arguments.user ];
 
 			res["authorised"] = true;
 			res["iduser"] = user.iduser;
