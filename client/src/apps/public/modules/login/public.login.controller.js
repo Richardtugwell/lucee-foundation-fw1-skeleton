@@ -2,9 +2,9 @@ angular
 	.module('public.login')
 	.controller('LoginController' , loginCtrl);
 
-loginCtrl.$inject = ['$scope' , '$state', '$http' , '$httpParamSerializer', 'FoundationApi'];
+loginCtrl.$inject = ['$scope' , 'FoundationApi', 'common.authService'];
 
-function loginCtrl($scope , $state, $http , $httpParamSerializer, foundationApi  ) {
+function loginCtrl($scope , foundationApi, authService  ) {
 
 	$scope.sidebarClosed = true;
 
@@ -20,7 +20,15 @@ function loginCtrl($scope , $state, $http , $httpParamSerializer, foundationApi 
     })
 
 	$scope.submitLogin = function() {
-		window.location.assign("/index.cfm/dashboard/app");
+
+		authService.loginUser('test', 'test').then(
+			function(loginResult){
+	           console.log(loginResult);
+	        },
+	        function(err){
+	           console.error(err);
+	        }
+		);
 	}
 
 };

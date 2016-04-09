@@ -12,6 +12,8 @@ component extends="framework.one" {
         defaultSection : 'public',
 		routes = [
 		  { "$GET/public/getMenu" = "/public/getMenu/" },
+		  { "$POST/public/authenticate" = "/public/authenticate/" },
+		  { "$get/public/authenticate" = "/public/authenticate/" },
 		  { "$GET/:section" = "/:section/app/" },
 		  { "*" = "/public/app/" }
 		]
@@ -23,6 +25,39 @@ component extends="framework.one" {
 		request.context.page["title"] = "Default Page";
 		request.context.FW1Version = framework.version;
 		request.context.LuceeVersion = "4.5.3.001";
+
+        if (structKeyexists(URL,"trace")) {
+			variables.framework.trace = "true";
+			}
+        if (structKeyexists(URL,"ORMreload")) {
+			ORMFlush();
+			ORMReload();
+			}
+        if (structKeyexists(URL,"killsession")) {
+			structClear(session);
+			redirect('public.default');
+			}
+		if (structKeyexists(URL,"ORMreloadFull")) {
+			ORMFlush();
+			ORMReload();
+			structClear(session);
+			redirect('public.default');
+			}
+
+        request.context.rules = getBeanfactory().getBean( "authorisation" ).getRules();
+		if ( structKeyExists( session , "permissions" ) ) {
+
+			var userpermissions = session.permissions;
+		}
+		else var userpermissions = 1;
+
+		rc.authstuff = getBeanfactory().getBean( "authorisation" ).authorise( userPermissions = userpermissions , resource = getSection()  );
+        if ( !getBeanfactory().getBean( "authorisation" ).authorise( userPermissions = userpermissions , resource = getSection()  ).authorised )
+        {
+				redirect("public.unauthorised");
+
+        }
+
 
     }
 

@@ -1,16 +1,7 @@
 component accessors = true {
 
 	property framework;
-	property todoservice;
-
-
-	public void function get( struct rc ) {
-
-		var todobean = todoservice.get(arguments.rc.id);
-
-		framework.renderdata("JSON" , todobean);
-
-	}
+	property authenticationservice;
 
 	public void function getMenu() {
 
@@ -19,28 +10,18 @@ component accessors = true {
 		framework.renderdata("JSON" , menu);
 
 	}
-	public void function delete( struct rc ) {
 
-		var ret = todoservice.delete(arguments.rc.id);
-
-		framework.renderdata("JSON" , ret);
-
+	public void function authenticate( rc ) {
+		param name="rc.user" default="anonymous";
+		param name="rc.password" default="anonymous";
+		var result = authenticationservice.authenticate( user = rc.user , password = rc.password);
+		if (result.authorised) {
+			session['iduser'] = result.iduser;
+			session['permissions'] = result.permissions;
+			framework.renderdata("JSON" , 'ok');
+		}
+		else {
+			framework.renderdata("JSON" , 'unauthorised');
+		}
 	}
-
-	public void function list( ) {
-
-		var todos = todoservice.list();
-
-		framework.renderdata("json" , todos);
-
-	}
-
-	public void function save( struct rc ) {
-
-		var todobean = todoservice.save( arguments.rc );
-
-		framework.renderdata("JSON" , todobean);
-
-	}
-
 }
