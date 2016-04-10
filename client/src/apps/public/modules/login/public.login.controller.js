@@ -1,10 +1,11 @@
+(function() {
 angular
 	.module('public.login')
 	.controller('LoginController' , loginCtrl);
 
-	loginCtrl.$inject = ['common.authService', '$httpParamSerializer'];
+	loginCtrl.$inject = ['common.authService', '$httpParamSerializer', 'FoundationApi'];
 
-	function loginCtrl(authService, $httpParamSerializer  ) {
+	function loginCtrl(authService, $httpParamSerializer, foundationApi  ) {
 
 		var vm = this;
 		this.loginData = {};
@@ -15,8 +16,8 @@ angular
 			authService.loginUser( $httpParamSerializer(this.loginData)).then(
 				function(loginResult){
 					if (loginResult['AUTHORISED'] === "true") {
-		           		this.authorised = "true";
-					}
+						foundationApi.publish('login-success', { title: 'Test', content: 'Test2' });
+					} else foundationApi.publish('login-success', { title: 'Fail', content: 'Unauthorised' });
 		        },
 		        function(err){
 		           console.error(err);
@@ -25,3 +26,4 @@ angular
 		}
 
 	};
+})();

@@ -38,7 +38,7 @@
             url:'register',
             views: {
                 'content@root': {
-                    templateUrl: 'public/modules/register/public.register.html'
+                    template: '<fm-register-form class="grid-block" />'
                 }
             }
         })
