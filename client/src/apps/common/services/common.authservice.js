@@ -12,8 +12,14 @@
 
     var service    = {};
 	var menu = $resource('/index.cfm/public/getMenu');
-	var authenticate = $resource('/index.cfm/public/authenticate');
-
+    var authenticate = $resource('/index.cfm/public/authenticate', {}, {
+        auth: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }
+    });
     service.getUserMenuItems = getUserMenuItems;
     service.loginUser = loginUser;
 
@@ -24,10 +30,10 @@
 		return menu.query();
     }
 
-    function loginUser( user, password ) {
+    function loginUser( data ) {
 
-        console.log(user);
-        return authenticate.save({}, { user: user, password: password}).$promise;
+        //console.log(arguments);
+        return authenticate.auth({} , data ).$promise;
     }
 
   }

@@ -2,13 +2,13 @@ angular
 	.module('public.login')
 	.controller('LoginController' , loginCtrl);
 
-loginCtrl.$inject = ['$scope' , 'FoundationApi', 'common.authService'];
+loginCtrl.$inject = ['$scope' , 'FoundationApi', 'common.authService', '$httpParamSerializer'];
 
-function loginCtrl($scope , foundationApi, authService  ) {
+function loginCtrl($scope , foundationApi, authService, $httpParamSerializer  ) {
 
 	$scope.sidebarClosed = true;
-	$scope.user = "";
-	$scope.password = "";
+	$scope.loginData = {};
+	$scope.authorised = "";
 
 	foundationApi.subscribe('sub-nav', function(event) {
         if (event === 'close') {
@@ -23,9 +23,11 @@ function loginCtrl($scope , foundationApi, authService  ) {
 
 	$scope.submitLogin = function() {
 
-		authService.loginUser($scope.user, $scope.password).then(
+		authService.loginUser( $httpParamSerializer($scope.loginData)).then(
 			function(loginResult){
-	           console.log($scope.user);
+				if (loginResult['AUTHORISED'] === "true") {
+	           	$scope.authorised = "true";
+				}
 	        },
 	        function(err){
 	           console.error(err);

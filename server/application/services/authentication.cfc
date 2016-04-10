@@ -6,7 +6,7 @@ component accessors="true"   {
 			tom: {
 				iduser: 1,
 				password: 'pwd',
-			 	permissions: 8
+			 	permissions: 13
 			},
 			dick: {
 				iduser: 2,
@@ -20,7 +20,7 @@ component accessors="true"   {
         res['authorised'] = false;
         res['iduser'] = 0;
 
-		if ( structKeyExists(users , arguments.user) AND user.password eq arguments.password ) {
+		if ( structKeyExists(users , arguments.user) AND users[arguments.user].password eq arguments.password ) {
 
 			var user = users[ arguments.user ];
 

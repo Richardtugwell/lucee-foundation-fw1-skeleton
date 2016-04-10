@@ -4,7 +4,7 @@ component  accessors="true" {
 
 	rules = createObject("java", "java.util.LinkedHashMap").init() ;
 
-  	rules['dashboard*'] = 16;
+  	rules['dashboard*'] = 8;
   	rules['public*'] = 1;
 
 	roles = structNew() ;
