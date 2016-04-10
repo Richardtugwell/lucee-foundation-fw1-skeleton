@@ -16,8 +16,15 @@ angular
 			authService.loginUser( $httpParamSerializer(this.loginData)).then(
 				function(loginResult){
 					if (loginResult['AUTHORISED'] === "true") {
-						foundationApi.publish('login-success', { title: 'Test', content: 'Test2' });
-					} else foundationApi.publish('login-success', { title: 'Fail', content: 'Unauthorised' });
+						window.location.assign('/index.cfm/dashboard');
+					} else foundationApi.publish(
+						'login-fail', {
+							autoclose: 3000,
+							color: 'warning',
+							title: 'Login failed',
+							content: 'Unknown userid/password'
+						}
+					);
 		        },
 		        function(err){
 		           console.error(err);
