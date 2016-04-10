@@ -10,7 +10,7 @@ component extends="framework.one" {
         generateSES : true,
         defaultItem : 'app',
         defaultSection : 'public',
-		routes = [
+		routess = [
 		  { "$GET/public/getMenu" = "/public/getMenu/" },
 		  { "$POST/public/authenticate" = "/public/authenticate/" },
 		  { "$get/public/authenticate" = "/public/authenticate/" },
@@ -63,7 +63,7 @@ component extends="framework.one" {
 
 	function onMissingView() {
 
-		return view("public/404");
+		return view("public/app");
 
     }
 

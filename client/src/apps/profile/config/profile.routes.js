@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('public')
+  angular.module('profile')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -9,9 +9,9 @@
     $stateProvider
         .state('root', {
             abstract: true,
-            templateUrl: 'public/public.html'
+            templateUrl: 'profile/profile.html'
         })
-        .state('login', {
+        .state('dashboard', {
             url:'/',
             parent: 'root',
             views: {
@@ -19,18 +19,10 @@
                     template: '<fm-common-header />'
                 },
                 'topmenu': {
-                    template: '<fm-topmenu />'
+                    template: '<p>Add a top menu if required</p>'
                 },
                 'content': {
-                    template: '<fm-login-form class="grid-block" />'
-                }
-            }
-        })
-        .state('login.register', {
-            url:'register',
-            views: {
-                'content@root': {
-                    template: '<fm-register-form class="grid-block" />'
+                    template: '<p>Add content</p>'
                 }
             }
         })

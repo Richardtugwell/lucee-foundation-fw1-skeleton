@@ -2,10 +2,20 @@ component accessors = true {
 
 	property framework;
 	property authenticationservice;
+	property menuservice;
+	property sessionservice;
+
+	public void function app() {
+
+		if (sessionservice.isLoggedIn() ) {
+			framework.redirect( action = "dashboard.app" );
+		}
+
+	}
 
 	public void function getMenu() {
 
-		var menu = ['Public', 'Dashboard', 'Admin'];
+		var menu = menuservice.getMenu();
 
 		framework.renderdata("JSON" , menu);
 

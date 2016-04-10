@@ -1,12 +1,25 @@
 component {
 
-	public any function getIDaccount(  ) {
+	public any function isLoggedIn(  ) {
 
-	    if ( structKeyExists( session , "IDaccount" ) )
+	    if ( structKeyExists( session , "IDuser" ) )
 	    	{
-	    	if ( len( trim( session['IDaccount'] ) ) )
+	    	if ( len( trim( session['IDuser'] ) ) )
 	    		{
-				return session['IDaccount'];
+				return true;
+	    		}
+	    	}
+	    return false;
+
+	}
+
+	public any function getIDuser(  ) {
+
+	    if ( structKeyExists( session , "IDuser" ) )
+	    	{
+	    	if ( len( trim( session['IDuser'] ) ) )
+	    		{
+				return session['IDuser'];
 	    		}
 	    	else
 	    		return 0;
