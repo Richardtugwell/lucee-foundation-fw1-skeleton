@@ -56,6 +56,15 @@ var WATCH = {
     javascript: [
         'src/assets/js/**/*.js'
     ],
+    apptemplates: [
+        'src/apps/**/*.html'
+    ],
+    appsass: [
+        'src/apps/**/*.scss'
+    ],
+    appjavascript: [
+        'src/apps/**/*.js'
+    ],
     images: [
         'src/assets/img/**/*'
     ]

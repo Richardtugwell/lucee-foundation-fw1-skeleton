@@ -17,7 +17,10 @@ gulp.task('build', ['sass', 'javascript', 'templates', 'images', 'copy'] );
 gulp.task('default',  function () {
     sequence('clean', 'build' );
     gulp.watch(config.WATCH.assets, ['copy']);
-    gulp.watch(config.WATCH.sass, ['sass']);
-    gulp.watch(config.WATCH.javascript, ['javascript']);
+    gulp.watch(config.WATCH.sass, ['sass:foundation']);
+    gulp.watch(config.WATCH.javascript, ['javascript:foundation']);
+    gulp.watch(config.WATCH.appjavascript, ['javascript:applications']);
+    gulp.watch(config.WATCH.apptemplates, ['templates:applications']);
+    gulp.watch(config.WATCH.appsass, ['sass:applications']);
     gulp.watch(config.WATCH.images, ['images']);
 })
