@@ -7,6 +7,8 @@
 
 	  function loginFormDirective() {
 	    var directive = {
+		scope: {
+		},
 	      restrict: 'E',
 	      templateUrl: 'public/modules/login/public.login.html',
 	      controller: 'LoginController',
