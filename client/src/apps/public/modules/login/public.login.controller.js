@@ -7,6 +7,8 @@ loginCtrl.$inject = ['$scope' , 'FoundationApi', 'common.authService'];
 function loginCtrl($scope , foundationApi, authService  ) {
 
 	$scope.sidebarClosed = true;
+	$scope.user = "";
+	$scope.password = "";
 
 	foundationApi.subscribe('sub-nav', function(event) {
         if (event === 'close') {
@@ -21,9 +23,9 @@ function loginCtrl($scope , foundationApi, authService  ) {
 
 	$scope.submitLogin = function() {
 
-		authService.loginUser('test', 'test').then(
+		authService.loginUser($scope.user, $scope.password).then(
 			function(loginResult){
-	           console.log(loginResult);
+	           console.log($scope.user);
 	        },
 	        function(err){
 	           console.error(err);

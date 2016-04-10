@@ -26,6 +26,7 @@
 
     function loginUser( user, password ) {
 
+        console.log(user);
         return authenticate.save({}, { user: user, password: password}).$promise;
     }
 
