@@ -1,14 +1,15 @@
-    <form ng-submit="vm.submitRegister()" class="form-common form-register" >
-            Email Address
-            <input type="text" ng-model="vm.registerData.userid" placeholder="Enter valid email">
-            </label>
-            <label>
-            First Name
-            <input type="text" ng-model="vm.registerData.password" placeholder="Text field">
-            </label>
-            <label>
-            Last Name
-            <input type="text" ng-model="vm.registerData.password" placeholder="Text field">
-            </label>
-          <input type="submit" id="submit" value="Submit" />
-    </form>
+<form ng-submit="vm.submitRegister()" class="public-form" >
+        <label>
+        Email Address
+        <input type="text" ng-model="vm.registerData.userid" placeholder="Enter valid email">
+        </label>
+        <label>
+        First Name
+        <input type="text" ng-model="vm.registerData.password" placeholder="Text field">
+        </label>
+        <label>
+        Last Name
+        <input type="text" ng-model="vm.registerData.password" placeholder="Text field">
+        </label>
+      <input type="submit" id="submit" value="Submit" />
+</form>
