@@ -1,14 +1,13 @@
-<div class="grid-block form-container">
-    <form ng-submit="submitLogin()" class="form-common form-login" ng-controller="LoginController">
-            <label>
-            Input Label
-            <input type="text" ng-model="loginData.user" placeholder="Text field">
-            </label>
-            <label>
-            Input Label
-            <input type="text" ng-model="loginData.password" placeholder="Text field">
-            </label>
-          <input type="submit" id="submit" value="Submit" />
-        {{authorised}}
-    </form>
-</div>
+
+<form ng-submit="submitLogin()" class="form-common form-login" >
+    <label>
+        Input Label
+        <input type="text" ng-model="loginData.user" placeholder="Text field">
+    </label>
+    <label>
+        Input Label
+        <input type="text" ng-model="loginData.password" placeholder="Text field">
+    </label>
+    <input class="button" type="submit" id="submit" value="Submit" />
+    {{authorised}}
+</form>

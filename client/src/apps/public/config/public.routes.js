@@ -30,7 +30,7 @@
             url:'login',
             views: {
                 'content@root': {
-                    templateUrl: 'public/modules/login/public.login.html'
+                    template: '<fm-login-form class="grid-block" />'
                 }
             }
         })
