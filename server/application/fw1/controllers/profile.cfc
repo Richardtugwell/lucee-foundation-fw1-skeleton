@@ -6,7 +6,7 @@ component accessors = true {
 
 		structClear(session);
 
-		framework.redirect( action = "public.app" );
+		framework.redirect( action = "public" );
 
 	}
 

@@ -6,12 +6,14 @@ component accessors="true" {
 
 		if ( sessionservice.isLoggedIn() ) {
 
-			return ['Dashboard' , 'Profile' , 'Logout' ];
-
-		} else
-		{
-			return [];
-		}
+			// In this simple example, every user gets the same menu options when they ar logged in
+			// In many apps, you would customise menus based on user privileges
+			return [
+				{'name':'Dashboard' , 'link':  'dashboard'},
+				{'name':'Profile' , 'link':  'profile'},
+				{'name':'Logout' , 'link':  'profile.logout'}
+				]
+		} else	return [];
 
 	}
 
