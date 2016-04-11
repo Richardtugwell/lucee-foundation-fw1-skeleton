@@ -3,15 +3,12 @@
 
 	angular
 		.module('common')
-		.factory('common.authService' , authService)
-
-	authService.inject = ['$resource'];
-
+		.factory('common.authService' , ['$resource', authService] )
 
     function authService($resource) {
 
     var service    = {};
-	var menu = $resource('/index.cfm/public/getMenu');
+	  var menu = $resource('/index.cfm/public/getMenu');
     var authenticate = $resource('/index.cfm/public/authenticate', {}, {
         auth: {
             method: 'POST',
@@ -27,12 +24,11 @@
 
     function getUserMenuItems() {
 
-		return menu.query();
+		    return menu.query();
     }
 
     function loginUser( data ) {
 
-        //console.log(arguments);
         return authenticate.auth({} , data ).$promise;
     }
 

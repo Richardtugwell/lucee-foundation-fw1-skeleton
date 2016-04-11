@@ -8,11 +8,11 @@
 </head>
 <body>
 	<cfoutput>#body#</cfoutput>
-    <script src="/assets/js/app.js"></script>
+	<script src="/assets/js/app.js"></script>
+		<script src="/assets/js/templates.js"></script>
+		<script src="/assets/apps/js/app.common.templates.js"></script>
+		<script src="/assets/apps/js/app.<cfoutput>#getSection()#</cfoutput>.templates.js"></script>
     <script src="/assets/apps/js/app.common.js"></script>
-    <script src="/assets/js/templates.js"></script>
-    <script src="/assets/apps/js/app.common.templates.js"></script>
-    <script src="/assets/apps/js/app.<cfoutput>#getSection()#</cfoutput>.templates.js"></script>
     <script src="/assets/apps/js/app.<cfoutput>#getSection()#</cfoutput>.js"></script>
 </body>
 </html>
