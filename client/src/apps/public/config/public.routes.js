@@ -34,6 +34,14 @@
                 }
             }
         })
+        .state('login.resetpassword', {
+            url:'resetpassword',
+            views: {
+                'content@root': {
+                    template: '<fm-resetpwd-form class="grid-block" />'
+                }
+            }
+        })
 
     }])
 
