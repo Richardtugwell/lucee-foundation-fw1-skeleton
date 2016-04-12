@@ -3,11 +3,12 @@ angular
 	.module('dashboard.sidebar')
 	.controller('SidebarController' , sidebarCtrl);
 
-	sidebarCtrl.$inject = [];
+	sidebarCtrl.$inject = ['common.authService'];
 
-	function sidebarCtrl() {
+	function sidebarCtrl(authService) {
 
 		var vm = this;
+		vm.userMenuItems = authService.getUserMenuItems();
 
 	};
 })();

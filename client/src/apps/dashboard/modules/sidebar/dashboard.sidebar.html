@@ -1,1 +1,6 @@
 <p>Sidebar</p>
+<ul class="menu-bar vertical hide-for-medium">
+  <li ng-repeat="item in vm.userMenuItems">
+    <a href="/index.cfm/{{item.link}}">{{item.name}}</a>
+  </li>
+</ul>
