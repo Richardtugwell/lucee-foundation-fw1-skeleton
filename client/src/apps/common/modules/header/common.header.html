@@ -1,16 +1,23 @@
-<div class="menu-group dark">
-	<div class="menu-group-left condense">
-		<ul class="menu-bar">
-			<li>
-				<a href="/">Lucee / FW1 / Foundation</a>
+<div class="title-bar dark">
+	<span class="hide-for-medium left condense">
+		<ul class="menu-bar dark condense">
+	        <li>
+				<a zf-toggle="sidebar">Menu</a>
 			</li>
 		</ul>
-	</div>
-	<div class="show-for-medium menu-group-right condense">
-		<ul class="menu-bar">
+	</span>
+	<span class="show-for-medium left">
+		<ul class="menu-bar dark condense">
 			<li ng-repeat="item in vm.userMenuItems">
 				<a href="/index.cfm/{{item.link}}">{{item.name}}</a>
 			</li>
 		</ul>
-	</div>
+	</span>
+	<span class="show-for-medium right">
+		<ul class="menu-bar dark condense">
+			<li ng-repeat="item in vm.userMenuItems">
+				<a href="/index.cfm/{{item.link}}">{{item.name}}</a>
+			</li>
+		</ul>
+	</span>
 </div>
