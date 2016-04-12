@@ -1,11 +1,22 @@
 <div class="fm-title-bar dark">
-<span class="title left">
-	FW1/Foundation
-</span>
-<span class="right">
-	<ul class="menu-bar dark condense" style="float:right;">
-		<li ng-repeat="item in vm.userMenuItems">
-			<a href="/index.cfm/{{item.link}}">{{item.name}}</a>
-		</li>
-	</ul>
-</span>
+	<span class="title left">
+		FW1/Foundation
+	</span>
+	<span class="right hide-for-medium">
+		<ul class="menu-bar dark">
+			<li>
+				<a zf-toggle="sidebar">{{vm.userMenuItems.length ? "Menu" : "&nbsp;"}}</a>
+			</li>
+		</ul>
+	</span>
+	<span class="right show-for-medium">
+		<ul class="menu-bar dark condense">
+			<li>
+				<a>&nbsp;</a>
+			</li>
+			<li ng-repeat="item in vm.userMenuItems">
+				<a href="/index.cfm/{{item.link}}">{{item.name}}</a>
+			</li>
+		</ul>
+	</span>
+</div>
