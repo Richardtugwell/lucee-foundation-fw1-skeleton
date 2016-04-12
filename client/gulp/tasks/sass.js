@@ -39,7 +39,9 @@ module.exports = function(config) {
 
         return gulp.src(path.join(pathToFolder, folder, '**/*.scss'))
             .pipe($.sourcemaps.init())
-            .pipe($.sass()
+            .pipe($.sass({
+                    includePaths: config.SOURCE.sass
+                })
                 .on('error', $.sass.logError))
             .pipe($.autoprefixer({
                 browsers: config.COMPATIBILITY

@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Lucee / FW1 / Foundation for Apps</title>
 	<link rel="stylesheet" href="/assets/css/app.css">
+	<link rel="stylesheet" href="/assets/apps/css/app.common.css">
 	<link rel="stylesheet" href="/assets/apps/css/app.<cfoutput>#getSection()#</cfoutput>.css">
 </head>
 <body>
