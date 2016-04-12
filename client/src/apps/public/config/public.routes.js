@@ -38,7 +38,7 @@
             url:'resetpassword',
             views: {
                 'content@root': {
-                    template: '<fm-resetpwd-form class="grid-block" />'
+                    template: '<fm-resetpassword-form class="grid-block" />'
                 }
             }
         })
