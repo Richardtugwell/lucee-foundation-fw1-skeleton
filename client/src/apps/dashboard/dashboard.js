@@ -7,7 +7,9 @@
     'common',
 
     //app modules
+    'dashboard.sidebar'
     ])
 
+  angular.module('dashboard.sidebar', [])
 
 })();

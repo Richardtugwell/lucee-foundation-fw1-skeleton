@@ -18,27 +18,11 @@
                 'header': {
                     template: '<fm-common-header />'
                 },
-                'topmenu': {
-                    template: '<p>Add a top menu if required</p>'
+                'sidebar': {
+                    template: '<fm-dashboard-sidebar />'
                 },
                 'content': {
                     template: '<p>Add content</p>'
-                }
-            }
-        })
-        .state('home.login', {
-            url:'login',
-            views: {
-                'content@root': {
-                    templateUrl: 'public/modules/login/login.html'
-                }
-            }
-        })
-        .state('home.register', {
-            url:'register',
-            views: {
-                'content@root': {
-                    templateUrl: 'public/modules/register/register.html'
                 }
             }
         })
