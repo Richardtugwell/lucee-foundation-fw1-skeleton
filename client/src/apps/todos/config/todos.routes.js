@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('profile')
+  angular.module('todos')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -9,9 +9,9 @@
     $stateProvider
         .state('root', {
             abstract: true,
-            templateUrl: 'profile/profile.html'
+            templateUrl: 'todos/todos.html'
         })
-        .state('profile', {
+        .state('list', {
             url:'/',
             parent: 'root',
             views: {
@@ -19,10 +19,10 @@
                     template: '<fm-common-header />'
                 },
                 'topmenu': {
-                    template: '<p>Add a top menu if required</p>'
+                    template: '<p>top menu</p>'
                 },
                 'content': {
-                    template: '<p>Add content</p>'
+                    template: '<p>todo list goes here</p>'
                 }
             }
         })

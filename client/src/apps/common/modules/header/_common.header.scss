@@ -1,8 +1,9 @@
 // custom css
 .fm-title-bar {
-  @include title-bar(
-  $background: #000,
-  $color: #fff,
-  $padding: 5px 1rem
-  );
-  }
+@extend %title-bar;
+@include title-bar-style(
+$background: #000,
+$color: #fff,
+$padding: 5px 1rem
+);
+}

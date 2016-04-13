@@ -3,12 +3,15 @@
 	<div ui-view="header"></div>
 
     <div ng-class="['ui-animation' ]" class="grid-block">
-        <div zf-panel position="left" id="sidebar" class="dashboard-sidebar medium-2 medium-grid-block vertical">
-	        <div ui-view="sidebar" >
-	        </div>
+
+        <div zf-panel position="left" id="sidebar" class="dashboard-sidebar vertical">
+
+	        <div ui-view="sidebar"></div>
+
         </div>
-        <div ui-view="content" class="small-12 medium-10 messages grid-content">
-        </div>
+
+        <div ui-view="content" class="small-12 medium-10 messages grid-content"></div>
+
     </div>
 
 </div>

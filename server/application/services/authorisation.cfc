@@ -4,6 +4,7 @@ component  accessors="true" {
 
   	variables.rules['dashboard*'] = 8;
   	variables.rules['profile*'] = 8;
+  	variables.rules['todos*'] = 8;
   	variables.rules['public*'] = 1;
 
 	variables.roles = structNew() ;
