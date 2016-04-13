@@ -8,12 +8,12 @@ angular
 	function loginCtrl(authService, $httpParamSerializer, foundationApi  ) {
 
 		var vm = this;
-		this.loginData = {};
-		this.authorised = "";
+		vm.loginData = {};
+		vm.authorised = "";
 
-		this.submitLogin = function() {
+		vm.submitLogin = function() {
 
-			authService.loginUser( $httpParamSerializer(this.loginData)).then(
+			authService.loginUser( $httpParamSerializer(vm.loginData)).then(
 				function(loginResult){
 					if (loginResult['AUTHORISED'] === "true") {
 						window.location.assign('/index.cfm/dashboard');
