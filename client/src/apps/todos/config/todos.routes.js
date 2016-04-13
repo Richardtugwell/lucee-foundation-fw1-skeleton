@@ -11,7 +11,7 @@
             abstract: true,
             templateUrl: 'todos/todos.html'
         })
-        .state('list', {
+        .state('todo', {
             url:'/',
             parent: 'root',
             views: {
@@ -22,7 +22,7 @@
                     template: '<p>top menu</p>'
                 },
                 'content': {
-                    template: '<p>todo list goes here</p>'
+                    template: '<fm-todo-list />'
                 }
             }
         })

@@ -11,7 +11,7 @@
 		},
 	      restrict: 'E',
 	      templateUrl: 'todos/modules/list/todos.list.html',
-	      controller: 'ListController',
+	      controller: 'TodoController',
 	      controllerAs: 'vm',
 	      bindToController: true
 	    };

@@ -1,16 +1,18 @@
 (function() {
 	angular
 		.module('todos.list', [])
-		.controller('todoCtrl' , todoCtrl);
+		.controller('TodoController' , todoCtrl);
 
-	todoCtrl.$inject = ['$scope' , '$http' , '$httpParamSerializer'];
+	todoCtrl.$inject = ['$scope' , '$http' , '$httpParamSerializer', 'todos.todoService'];
 
-	function todoCtrl($scope , $http , $httpParamSerializer  ) {
+	function todoCtrl($scope , $http , $httpParamSerializer , todoService  ) {
 
-		$http.get('/todo').success( function( data ) { $scope.todos = data } );
+		var vm = this;
 
-		$scope.saveTodo = function( idx ) {
-			var todo = $scope.todos[idx];
+		vm.todos = todoService.getTodos();
+
+		vm.saveTodo = function( idx ) {
+			var todo = vm.todos[idx];
 			$http({
 				method: 'POST',
 				url: '/todo',
@@ -20,19 +22,19 @@
 				} // set the headers so angular passing info as form data (not request payload)
 			}).success(function(data){
 
-				$scope.todos[idx] = data;
+				vm.todos[idx] = data;
 
 			});
 
 		};
 
-		$scope.deleteTodo = function( idx ) {
+		vm.deleteTodo = function( idx ) {
 
-			var todo = $scope.todos[idx];
+			var todo = vm.todos[idx];
 
 			$http.delete('/todo/' + todo.id).success(function(data){
 
-					$scope.todos.splice( idx , 1 );
+					vm.todos.splice( idx , 1 );
 
 					});
 
@@ -42,16 +44,16 @@
 
 		$scope.newTodo = function() {
 
-			$scope.todos.push( { "status":"new" }  );
+			vm.todos.push( { "status":"new" }  );
 
 		};
 
 
 		$scope.reset = function( idx ) {
 
-			var todo = $scope.todos[idx];
+			var todo = vm.todos[idx];
 
-			$http.get('/todo/' + todo.id).success( function( data ) { $scope.todos[idx] = data } );
+			$http.get('/todo/' + todo.id).success( function( data ) { vm.todos[idx] = data } );
 
 		}
 
